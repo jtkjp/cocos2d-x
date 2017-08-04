@@ -30,6 +30,8 @@
 #include "editor-support/cocostudio/CocoStudio.h"
 #include "extensions/cocos-ext.h"
 
+#include "CCScrollViewTest.hpp"
+
 USING_NS_CC;
 
 AppDelegate::AppDelegate()
@@ -103,12 +105,14 @@ bool AppDelegate::applicationDidFinishLaunching()
 #else
     glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::NO_BORDER);
 #endif
+    
+    Director::getInstance()->runWithScene(CCScrollViewTest::scene());
 
-    // Enable Remote Console
-    auto console = director->getConsole();
-    console->listenOnTCP(5678);
-
-    _testController = TestController::getInstance();
+//    // Enable Remote Console
+//    auto console = director->getConsole();
+//    console->listenOnTCP(5678);
+//
+//    _testController = TestController::getInstance();
 
     // To enable built-in VR, use this line.
 //    auto vrImpl = new VRGenericRenderer;

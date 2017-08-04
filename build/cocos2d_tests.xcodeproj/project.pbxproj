@@ -1228,6 +1228,26 @@
 		688669711AE8E8B500C2CFD9 /* SpritePolygonTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6886696F1AE8E8B500C2CFD9 /* SpritePolygonTest.cpp */; };
 		688669721AE8E8B500C2CFD9 /* SpritePolygonTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6886696F1AE8E8B500C2CFD9 /* SpritePolygonTest.cpp */; };
 		826294431AAF071500CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826294421AAF071500CB7CF7 /* Security.framework */; };
+		843CFDF21F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF31F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF41F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF51F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF61F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF71F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF81F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDF91F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDFA1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDFB1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDFC1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDFD1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDFE1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFDFF1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFE001F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFE011F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFE021F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFE031F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFE041F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
+		843CFE051F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */; };
 		850F8A241B5F3A4F00780603 /* Bug-12847.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 850F8A221B5F3A4F00780603 /* Bug-12847.cpp */; };
 		850F8A251B5F3A4F00780603 /* Bug-12847.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 850F8A221B5F3A4F00780603 /* Bug-12847.cpp */; };
 		94D793D91B4B7A3600F60F10 /* Bug-CCDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94D793D51B4B7A3600F60F10 /* Bug-CCDrawNode.cpp */; };
@@ -2451,6 +2471,8 @@
 		70A7F72D191D3E4900F0F206 /* shaderTest.psh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shaderTest.psh.h; sourceTree = "<group>"; };
 		70A7F730191D421B00F0F206 /* ShaderTest.vsh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTest.vsh.h; sourceTree = "<group>"; };
 		826294421AAF071500CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCScrollViewTest.cpp; sourceTree = "<group>"; };
+		843CFDF11F344DEA000FB327 /* CCScrollViewTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCScrollViewTest.hpp; sourceTree = "<group>"; };
 		850F8A221B5F3A4F00780603 /* Bug-12847.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-12847.cpp"; sourceTree = "<group>"; };
 		850F8A231B5F3A4F00780603 /* Bug-12847.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-12847.h"; sourceTree = "<group>"; };
 		94D793D51B4B7A3600F60F10 /* Bug-CCDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-CCDrawNode.cpp"; sourceTree = "<group>"; };
@@ -3431,6 +3453,8 @@
 				1AC35B1C18CECF0C00F37B72 /* ZwoptexTest */,
 				1AC35C6F18CECF0C00F37B72 /* VibrateTest */,
 				27C5CDFE1C6E043D000CA4B3 /* SpriteFrameCacheTest */,
+				843CFDF01F344DEA000FB327 /* CCScrollViewTest.cpp */,
+				843CFDF11F344DEA000FB327 /* CCScrollViewTest.hpp */,
 			);
 			name = Classes;
 			path = "../tests/cpp-tests/Classes";
@@ -5530,6 +5554,9 @@
 					507B43541C31FB340067B53E = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					A07A517F1783A1D20073F6A7 = {
+						DevelopmentTeam = MJGJ84X45C;
+					};
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cocos2d_tests" */;
@@ -6504,6 +6531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843CFDFE1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				15CBA9B7196EE8D9005877BB /* AppController.mm in Sources */,
 				15CBA9B8196EE8D9005877BB /* main.m in Sources */,
 				15CBA9B9196EE8D9005877BB /* RootViewController.mm in Sources */,
@@ -6534,6 +6562,7 @@
 				1856647E1B423DD6009EF2AE /* NativeOcClass.m in Sources */,
 				1856647D1B423DCA009EF2AE /* js_Effect3D_bindings.cpp in Sources */,
 				1856647C1B423DBD009EF2AE /* js_DrawNode3D_bindings.cpp in Sources */,
+				843CFDFF1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				1856647B1B423DAA009EF2AE /* RootViewController.mm in Sources */,
 				1856647A1B423D95009EF2AE /* AppDelegate.cpp in Sources */,
 			);
@@ -6544,6 +6573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC358C218CEC1BF00F37B72 /* HelloWorldScene.cpp in Sources */,
+				843CFDF31F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				1AC358C018CEC1BF00F37B72 /* AppDelegate.cpp in Sources */,
 				1AC358F918CEC1D400F37B72 /* main.cpp in Sources */,
 			);
@@ -6555,6 +6585,7 @@
 			files = (
 				1AC35D6018CEDE9E00F37B72 /* main.cpp in Sources */,
 				1AC35D3118CEDE8B00F37B72 /* AppDelegate.cpp in Sources */,
+				843CFDF61F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6567,6 +6598,7 @@
 				1AC358C318CEC1BF00F37B72 /* HelloWorldScene.cpp in Sources */,
 				1AC358EA18CEC1CB00F37B72 /* main.m in Sources */,
 				1AC358C118CEC1BF00F37B72 /* AppDelegate.cpp in Sources */,
+				843CFDFA1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6576,6 +6608,7 @@
 			files = (
 				1AC35D5218CEDE9400F37B72 /* RootViewController.mm in Sources */,
 				1AC35D3218CEDE8B00F37B72 /* AppDelegate.cpp in Sources */,
+				843CFDFC1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				1AC35D5118CEDE9400F37B72 /* main.m in Sources */,
 				1AC35D4518CEDE9400F37B72 /* AppController.mm in Sources */,
 			);
@@ -6590,6 +6623,7 @@
 				150F918819DA409E00B89F57 /* lua_test_bindings.cpp in Sources */,
 				1AC35DB618CEE5DA00F37B72 /* main.cpp in Sources */,
 				1AC35D8318CEE5B100F37B72 /* lua_assetsmanager_test_sample.cpp in Sources */,
+				843CFDF51F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6602,6 +6636,7 @@
 				1AC35DA418CEE5D100F37B72 /* LuaObjectCBridgeTest.mm in Sources */,
 				1AC35D9818CEE5D100F37B72 /* AppController.mm in Sources */,
 				1AC35D8218CEE5B100F37B72 /* AppDelegate.cpp in Sources */,
+				843CFDFB1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				1AC35DA618CEE5D100F37B72 /* RootViewController.mm in Sources */,
 				1AC35D8418CEE5B100F37B72 /* lua_assetsmanager_test_sample.cpp in Sources */,
 			);
@@ -6652,6 +6687,7 @@
 				B6CAB54E1AF9AA6C00B9B856 /* Physics3DTest.cpp in Sources */,
 				B639932E1A490EC700B07923 /* Particle3DTest.cpp in Sources */,
 				1AC35C5F18CECF0C00F37B72 /* Paddle.cpp in Sources */,
+				843CFDF21F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				1AC35B4B18CECF0C00F37B72 /* BugsTest.cpp in Sources */,
 				27C5CE011C6E0469000CA4B3 /* SpriteFrameCacheTest.cpp in Sources */,
 				1AC35B4118CECF0C00F37B72 /* QuestionContainerSprite.cpp in Sources */,
@@ -6756,6 +6792,7 @@
 				3E6177331960FB3500DE83F5 /* AppDelegate.cpp in Sources */,
 				3E6177361960FB5A00DE83F5 /* main.m in Sources */,
 				3E6177341960FB3900DE83F5 /* GameControllerTest.cpp in Sources */,
+				843CFDFD1F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6864,6 +6901,7 @@
 				507B41C51C31BEA60067B53E /* EffectsTest.cpp in Sources */,
 				507B41C71C31BEA60067B53E /* ActionManagerTest.cpp in Sources */,
 				507B41C91C31BEA60067B53E /* PhysicsTest.cpp in Sources */,
+				843CFE021F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				507B41CC1C31BEA60067B53E /* UILayoutTest.cpp in Sources */,
 				507B41CE1C31BEA60067B53E /* UIListViewTest.cpp in Sources */,
 				507B41CF1C31BEA60067B53E /* MaterialSystemTest.cpp in Sources */,
@@ -6903,6 +6941,7 @@
 			files = (
 				507B42851C31E6070067B53E /* AppController.mm in Sources */,
 				500D1CD51CF4A48B00535D35 /* Bug-15594.cpp in Sources */,
+				843CFE031F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				507B42861C31E6070067B53E /* main.m in Sources */,
 				507B42871C31E6070067B53E /* NativeOcClass.m in Sources */,
 				507B42881C31E6070067B53E /* js_Effect3D_bindings.cpp in Sources */,
@@ -6921,6 +6960,7 @@
 				507B436A1C31FB670067B53E /* LuaObjectCBridgeTest.mm in Sources */,
 				507B436B1C31FB670067B53E /* AppController.mm in Sources */,
 				507B436C1C31FB670067B53E /* AppDelegate.cpp in Sources */,
+				843CFE041F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				507B436D1C31FB670067B53E /* RootViewController.mm in Sources */,
 				507B436E1C31FB670067B53E /* lua_assetsmanager_test_sample.cpp in Sources */,
 			);
@@ -6935,6 +6975,7 @@
 				507B43DE1C3201360067B53E /* AppDelegate.cpp in Sources */,
 				507B43DF1C3201360067B53E /* main.m in Sources */,
 				507B43E01C3201360067B53E /* GameControllerTest.cpp in Sources */,
+				843CFE051F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6944,6 +6985,7 @@
 			files = (
 				50FC188F1C3371C000DD15A3 /* main.cpp in Sources */,
 				50FC18521C3371C000DD15A3 /* AppDelegate.cpp in Sources */,
+				843CFDF71F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6956,6 +6998,7 @@
 				50FC18F91C3372DB00DD15A3 /* NativeOcClass.m in Sources */,
 				50FC18F81C3372DB00DD15A3 /* main.m in Sources */,
 				50FC18EC1C3372DB00DD15A3 /* AppController.mm in Sources */,
+				843CFE001F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6964,6 +7007,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50FC3F9C1D74C039001C936A /* AppDelegate.cpp in Sources */,
+				843CFDF41F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				50FC3F951D74BD6F001C936A /* main.cpp in Sources */,
 				50FC3F9D1D74C03E001C936A /* GameControllerTest.cpp in Sources */,
 			);
@@ -7046,6 +7090,7 @@
 				29080DA8191B595E0066F8DF /* UICheckBoxTest.cpp in Sources */,
 				1AC35B3C18CECF0C00F37B72 /* Bug-350.cpp in Sources */,
 				1AC35C4818CECF0C00F37B72 /* SchedulerTest.cpp in Sources */,
+				843CFDF91F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				1AC35C5618CECF0C00F37B72 /* Texture2dTest.cpp in Sources */,
 				1AC35C0818CECF0C00F37B72 /* MouseTest.cpp in Sources */,
 				1AC35C5E18CECF0C00F37B72 /* Ball.cpp in Sources */,
@@ -7130,6 +7175,7 @@
 				FA94B24C1B9059540074B261 /* VisibleRect.cpp in Sources */,
 				FADE78701B9451540061590D /* PerformanceNodeChildrenTest.cpp in Sources */,
 				FADE78871B96C4780061590D /* PerformanceParticle3DTest.cpp in Sources */,
+				843CFE011F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				FADE78FE1B9ECB7F0061590D /* PerformanceContainerTest.cpp in Sources */,
 				FA94B2361B8F02880074B261 /* Profile.cpp in Sources */,
 				FADE78961B9C42E80061590D /* PerformanceLabelTest.cpp in Sources */,
@@ -7156,6 +7202,7 @@
 				FADE78A61B9E86100061590D /* PerformanceScenarioTest.cpp in Sources */,
 				FA94B23A1B9045160074B261 /* PerformanceAllocTest.cpp in Sources */,
 				FADE78B31B9EC0290061590D /* PerformanceCallbackTest.cpp in Sources */,
+				843CFDF81F344DEA000FB327 /* CCScrollViewTest.cpp in Sources */,
 				FADE78991B9D5C640061590D /* PerformanceEventDispatcherTest.cpp in Sources */,
 				FADE78731B9572990061590D /* PerformanceParticleTest.cpp in Sources */,
 				FA94B2441B90497E0074B261 /* controller.cpp in Sources */,
@@ -8450,7 +8497,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MJGJ84X45C;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../tests/cpp-tests/proj.ios/Prefix.pch";
@@ -8465,6 +8513,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../external/curl/prebuilt/ios",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wao-corp.org.cocos2d-x.cpp-tests-iOS";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8477,7 +8526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MJGJ84X45C;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../tests/cpp-tests/proj.ios/Prefix.pch";
@@ -8492,6 +8541,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../external/curl/prebuilt/ios",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wao-corp.org.cocos2d-x.cpp-tests-iOS";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
