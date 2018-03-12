@@ -25,125 +25,118 @@
 # ****************************************************************************/
 
 cmake_minimum_required(VERSION 3.1)
-# It ensures that when Find*.cmake files included from cmake's Modules dir
-# include another *.cmake file with relative path, that file will be included
-# also from cmake's Modules dir, to not clash with per-project files.
-cmake_policy(SET CMP0017 NEW)
 
-# Use new behaviour with cmake >= 3.1:
-# Only interpret if() arguments as variables or keywords when unquoted.
-if(CMAKE_VERSION VERSION_GREATER 3.1)
-    cmake_policy(SET CMP0054 NEW)
-endif()
+set(APP_NAME TemplateJS)
 
-set(APP_NAME MyGame)
-project (${APP_NAME})
+project(${APP_NAME})
 
-# define some variables
-set(COCOS2D_X_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/frameworks/cocos2d-x)
 set(RUNTIME_SRC_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/frameworks/runtime-src)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${COCOS2D_X_ROOT}/cmake/Modules/")
-set(COCOS_EXTERNAL_DIR ${COCOS2D_X_ROOT}/external)
-# architecture
-if (CMAKE_SIZEOF_VOID_P EQUAL 8)
-  set(ARCH_DIR "64-bit")
-elseif (CMAKE_SIZEOF_VOID_P EQUAL 4)
-  set(ARCH_DIR "32-bit")
-else()
-  message(FATAL_ERROR "Unsupported architecture, CMake will exit")
-  return()
+
+if(NOT DEFINED BUILD_ENGINE_DONE)
+    set(COCOS2DX_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/frameworks/cocos2d-x)
+    set(CMAKE_MODULE_PATH ${COCOS2DX_ROOT_PATH}/cmake/Modules/)
+
+    include(CocosBuildSet)
+    CocosBuildSet()
+    if(NOT USE_COCOS_PREBUILT)
+        set(BUILD_JS_LIBS ON)
+        add_subdirectory(${COCOS2DX_ROOT_PATH}/cocos ${ENGINE_BINARY_PATH}/cocos/core)
+    endif(NOT USE_COCOS_PREBUILT)
 endif()
-# CMAKE_BUILD_TYPE has precedence over DEBUG_MODE
-# Still supporting DEBUG_MODE for backwards compatibility
-if (NOT CMAKE_BUILD_TYPE)
-  if(DEBUG_MODE)
-    set(CMAKE_BUILD_TYPE DEBUG)
-  else(DEBUG_MODE)
-    set(CMAKE_BUILD_TYPE RELEASE)
-  endif(DEBUG_MODE)
-endif(NOT CMAKE_BUILD_TYPE)
 
-include(CocosBuildHelpers)
+# script and source files info, not need to compile
+set(res_main_files
+    "${CMAKE_CURRENT_SOURCE_DIR}/main.js"
+    "${CMAKE_CURRENT_SOURCE_DIR}/project.json" 
+)
+set(res_res_folders 
+    "${CMAKE_CURRENT_SOURCE_DIR}/res" 
+)
+set(res_src_folders
+    "${CMAKE_CURRENT_SOURCE_DIR}/src"
+)
+set(res_script_folders
+    "${COCOS2DX_ROOT_PATH}/cocos/scripting/js-bindings/script"
+)
+if(APPLE OR VS)
+    cocos_mark_multi_resources(res_main RES_TO "Resources" FILES ${res_main_files})
+    cocos_mark_multi_resources(res_res RES_TO "Resources/res" FOLDERS ${res_res_folders})
+    cocos_mark_multi_resources(res_src RES_TO "Resources/src" FOLDERS ${res_src_folders})
+    cocos_mark_multi_resources(res_script RES_TO "Resources/script" FOLDERS ${res_script_folders})
+    set(cc_common_res ${res_main} ${res_res} ${res_src} ${res_script})
+endif()
 
-message(${BUILDING_STRING})
-
-# SelectModule() is a macro to select building modules
-include(SelectModule)
-SelectModule()
-
-# set compiler options
-include(SetCompilerOptions)
-SetCompilerOptions()
-
-if (CMAKE_FIND_ROOT_PATH AND USE_PREBUILT_LIBS)
-  # Adds cocos2d-x external folder to the list of valid include/library paths when cross-compiling and using prebuilds
-  set(CMAKE_FIND_ROOT_PATH ${CMAKE_FIND_ROOT_PATH} ${COCOS_EXTERNAL_DIR})
-endif ()
-
+# sources need to compile info, include dirs and source files
 include_directories(
-  ${COCOS2D_X_ROOT}
-  ${COCOS2D_X_ROOT}/cocos
-  ${COCOS2D_X_ROOT}/deprecated
-  ${COCOS2D_X_ROOT}/cocos/platform
-  ${COCOS2D_X_ROOT}/extensions
-  ${COCOS2D_X_ROOT}/external
-  ${COCOS2D_X_ROOT}/external/spidermonkey/include/${PLATFORM_FOLDER}
-  ${COCOS2D_X_ROOT}/cocos/editor-support
+    ${RUNTIME_SRC_ROOT}/Classes
+    ${COCOS2DX_ROOT_PATH}/cocos/editor-support
+    ${COCOS2DX_ROOT_PATH}/external/spidermonkey/include/${PLATFORM_FOLDER}
 )
 
-if(USE_PREBUILT_LIBS)
-  include(CocosUsePrebuiltLibs)
-endif()
+set(GAME_SRC ${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp)
 
-set(PREV_CMAKE_CURRENT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-set(CMAKE_CURRENT_SOURCE_DIR ${COCOS2D_X_ROOT})
-include(BuildModules)
-BuildModules()
-set(CMAKE_CURRENT_SOURCE_DIR ${PREV_CMAKE_CURRENT_SOURCE_DIR})
-
-if(WIN32)
+if(ANDROID)
+    # change APP_NAME to the share library name for Android, it's value depend on AndroidManifest.xml
+    set(APP_NAME cocos2djs)
+    list(APPEND GAME_SRC ${RUNTIME_SRC_ROOT}/proj.android/app/jni/hellojavascript/main.cpp)
+elseif(LINUX)
+    list(APPEND GAME_SRC ${RUNTIME_SRC_ROOT}/proj.linux/main.cpp)
+elseif(WINDOWS)
+    set(WINDOWS_SRC ${RUNTIME_SRC_ROOT}/proj.win32/main.cpp)
+    list(APPEND WINDOWS_SRC ${RUNTIME_SRC_ROOT}/proj.win32/game.rc)
+    set(PLATFORM_SPECIFIC_HEADERS
+        ${RUNTIME_SRC_ROOT}/proj.win32/main.h
+        ${RUNTIME_SRC_ROOT}/proj.win32/resource.h
+    )
+    list(APPEND GAME_SRC ${WINDOWS_SRC} ${PLATFORM_SPECIFIC_HEADERS} ${cc_common_res})
+elseif(APPLE)
+    if(IOS)
+        set(ios_code_files
+            ${RUNTIME_SRC_ROOT}/proj.ios_mac/ios/main.m
+            ${RUNTIME_SRC_ROOT}/proj.ios_mac/ios/AppController.mm
+            ${RUNTIME_SRC_ROOT}/proj.ios_mac/ios/RootViewController.mm
+        )
+        set(ios_res_files
+            ${RUNTIME_SRC_ROOT}/proj.ios_mac/ios/LaunchScreen.storyboard
+            ${RUNTIME_SRC_ROOT}/proj.ios_mac/ios/LaunchScreenBackground.png
+        )
+        cocos_mark_multi_resources(ios_res_files RES_TO "Resources" FILES ${ios_res_files})
+        set(apple_src_files ${ios_code_files} ${ios_res_files})
+    elseif(MACOSX)
+        set(mac_code_files ${RUNTIME_SRC_ROOT}/proj.ios_mac/mac/main.cpp)
+        set(mac_res_files
+            ${RUNTIME_SRC_ROOT}/proj.ios_mac/mac/Icon.icns
+        )
+        cocos_mark_multi_resources(mac_res_files RES_TO "Resources" FILES ${mac_res_files})
+        set(apple_src_files ${mac_res_files} ${mac_code_files})
+    endif()
+    list(APPEND GAME_SRC ${apple_src_files} ${cc_common_res})
 else()
-  set(GAME_SRC
-    ${RUNTIME_SRC_ROOT}/proj.linux/main.cpp
-    ${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp
-  )
+    message(FATAL_ERROR "Unsupported platform, CMake will exit" )
 endif()
 
-
-# jsbinding library
-add_subdirectory(${COCOS2D_X_ROOT}/cocos/scripting/js-bindings)
-
-add_executable(${APP_NAME}
-  ${GAME_SRC}
+# mark app complie info and libs info
+cocos_build_app(${APP_NAME} 
+    APP_SRC "${GAME_SRC}"
+    DEPEND_COMMON_LIBS "jscocos2d" "cocos2d"
+    DEPEND_ANDROID_LIBS "cocos2d_android"
 )
 
-target_link_libraries(${APP_NAME}
-  jscocos2d
-  cocos2d
-)
-
-set(APP_BIN_DIR "${CMAKE_BINARY_DIR}/bin")
-
-set_target_properties(${APP_NAME} PROPERTIES
-     RUNTIME_OUTPUT_DIRECTORY  "${APP_BIN_DIR}")
-
-if(LINUX)
-  set(RES_PREFIX "/Resources")
-else()
-  set(RES_PREFIX "")
+# mark app resources, resource will be copy auto after mark
+if(APPLE)
+    if(MACOSX)
+        cocos_pak_xcode(${APP_NAME} BUNDLE_NAME "LuaTestsApp")
+    elseif(IOS)
+        cocos_pak_xcode(${APP_NAME} INFO_PLIST "iOSBundleInfo.plist.in")
+    endif()
+elseif(WINDOWS)
+    cocos_copy_target_dll(${APP_NAME} COPY_TO ${APP_BIN_DIR})
 endif()
-
-pre_build(${APP_NAME}
-  COMMAND ${CMAKE_COMMAND} -E remove_directory ${APP_BIN_DIR}${RES_PREFIX}/script
-  COMMAND ${CMAKE_COMMAND} -E remove_directory ${APP_BIN_DIR}${RES_PREFIX}/res
-  COMMAND ${CMAKE_COMMAND} -E remove_directory ${APP_BIN_DIR}${RES_PREFIX}/src
-  COMMAND ${CMAKE_COMMAND} -E remove ${APP_BIN_DIR}${RES_PREFIX}/*.js
-  COMMAND ${CMAKE_COMMAND} -E remove ${APP_BIN_DIR}${RES_PREFIX}/*.json
-  COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/Resources ${APP_BIN_DIR}${RES_PREFIX}/res
-  COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/res ${APP_BIN_DIR}${RES_PREFIX}/res
-  COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/src ${APP_BIN_DIR}${RES_PREFIX}/src
-  COMMAND ${CMAKE_COMMAND} -E copy_directory ${COCOS2D_X_ROOT}/cocos/scripting/js-bindings/script ${APP_BIN_DIR}${RES_PREFIX}/script
-  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/main.js ${APP_BIN_DIR}${RES_PREFIX}/main.js
-  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/project.json ${APP_BIN_DIR}${RES_PREFIX}/project.json
-  )
+# copy resource on linux or WINDOWS
+if(LINUX OR WINDOWS)
+    cocos_copy_target_res(${APP_NAME} COPY_TO ${APP_RES_DIR} FILES ${res_main_files})
+    cocos_copy_target_res(${APP_NAME} COPY_TO ${APP_RES_DIR}/res FOLDERS ${res_res_folders})
+    cocos_copy_target_res(${APP_NAME} COPY_TO ${APP_RES_DIR}/src FOLDERS ${res_src_folders})
+    cocos_copy_target_res(${APP_NAME} COPY_TO ${APP_RES_DIR}/script FOLDERS ${res_script_folders})
+endif()
 
